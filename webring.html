@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="se">
+<header>
+    <title>Kodsnack Podcast Universe Webring</title>
+    <meta charset="utf-8">
+    <style>
+        .page_link {
+            white-space: nowrap;
+            font-family: monospace;
+            padding: 0.5em;
+        }
+
+        a.hide_empty_href[href] {
+            display: initial;
+        }
+
+        a.hide_empty_href[href=""] {
+            display: none;
+        }
+
+        nav {
+            font-size: 200%;
+            background-color: #DDF;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function (event) {
+            var sites = [
+                "kodsnackpodcastuniver.se",
+                "kodsnack.se",
+                "asdf.pizza",
+                "kompilator.se",
+                "swedoffi.se"
+            ];
+
+            /*
+             Takes the current site host name from the GET parameter `site`.
+             */
+            var current_site_matches = window.location.search.match(/\?site=([^&]+)/);
+
+            var current_host = null;
+
+            if (current_site_matches) {
+                current_host = current_site_matches[1];
+            }
+            var curr_site_pos = sites.indexOf(current_host);
+
+            /*
+             Link a random site
+             */
+            var a_random_elm = document.getElementById("a_random");
+            if (a_random_elm) {
+                a_random_elm.href = "https://" + sites[
+                    Math.floor(Math.random() * sites.length)
+                ];
+            }
+
+            /*
+             Set links for next and previous sites if we know the current site.
+             */
+            if (curr_site_pos > -1) {
+                var prev_site_pos = curr_site_pos > 0
+                    ? curr_site_pos - 1
+                    : sites.length - 1;
+
+                var next_site_pos = curr_site_pos < sites.length
+                    ? curr_site_pos + 1
+                    : 0;
+
+                var a_prev_elm = document.getElementById("a_prev");
+                if (a_prev_elm) {
+                    a_prev_elm.href = "https://" + sites[prev_site_pos];
+                }
+
+                var a_next_elm = document.getElementById("a_next");
+                if (a_next_elm) {
+                    a_next_elm.href = "https://" + sites[next_site_pos];
+                }
+            }
+        });
+    </script>
+</header>
+
+<body>
+    <div style="border: solid 0.3em #003;">
+        <div style="border: solid 0.3em #446;">
+            <nav style="border: solid 0.3em #99A;">
+                <div>
+                    <a href="https://kodsnackpodcastuniver.se/"
+                       rel="external search">
+                        Kodsnack Podcast Universe Webring
+                    </a>
+                </div>
+                <div>
+                    <a class="hide_empty_href page_link"
+                       id="a_prev"
+                       href=""
+                       rel="external prev">
+                        <span>&lt;</span>
+                        Föregående
+                    </a>
+                    <a href=""
+                       id="a_random"
+                       class="hide_empty_href page_link"
+                       rel="external">
+                        <span aria-hidden="true">&#x2928;</span>
+                        Slumpmässig sida
+                    </a>
+                    <a class="hide_empty_href page_link"
+                       id="a_next"
+                       href=""
+                       rel="external next">
+                        Nästa
+                        <span aria-hidden="true">&gt;</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</body>
+
+</html>
