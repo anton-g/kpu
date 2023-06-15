@@ -5,7 +5,8 @@
     <title>kodsnack podcast universe</title>
     <style>
       :root {
-        --glow: 80px;
+        --glow: 60px;
+        --move-size: 50px;
       }
       * {
         box-sizing: border-box;
@@ -58,7 +59,7 @@
         position: relative;
       }
       a:hover {
-        --glow: 90px;
+        --glow: 75px;
       }
       .glow {
         width: 1px;
@@ -77,10 +78,6 @@
         max-width: 250px;
         width: 100%;
       }
-      .secondary img {
-        max-width: 250px;
-        width: 100%;
-      }
       .spin {
         animation-name: spin;
         animation-duration: 50000ms;
@@ -94,16 +91,10 @@
         position: relative;
       }
       main {
-        max-width: 750px;
+        max-width: 700px;
         aspect-ratio: 1 / 1;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-      }
-      .secondary {
-        max-width: 750px;
-        aspect-ratio: 1 / 1;
-        display: grid;
+        gap: 75px;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
       }
@@ -119,13 +110,7 @@
         grid-column-start: 1;
         grid-row-start: 3;
       }
-      .secondary {
-          grid-column-start: 3;
-          grid-row-start: 3;
-       }
       .swedoffice {
-        max-height: 80%;
-        aspect-ratio: 1 / 1;
         grid-column-start: 2;
         grid-row-start: 1;
       }
@@ -133,30 +118,49 @@
         border-radius: 50%;
       }
       .synk {
-          grid-column-start: 2;
-          grid-row-start: 3;
-          width: 200px;
+        grid-column-start: 2;
+        grid-row-start: 3;
       }
       .synk img {
         border-radius: 30%;
       }
-     .regprog {
-        max-height: 80%;
-        aspect-ratio: 1 / 1;
+      .regprog {
         grid-column-start: 3;
         grid-row-start: 3;
       }
       .regprog img {
         border-radius: 50%;
       }
+      .anti-large {
+        aspect-ratio: 1 / 1;
+        max-height: 80%;
+      }
       .bma {
-         width: 200px;
-         grid-column-start: 3;
-         grid-row-start: 1;
+        grid-column-start: 3;
+        grid-row-start: 1;
+        margin-top: 50px;
+        margin-bottom: -50px;
       }
       .gif {
         position: absolute;
         z-index: -1;
+      }
+
+      .move-up {
+        margin-top: -50px;
+        margin-bottom: 50px;
+      }
+      .move-down {
+        margin-top: 50px;
+        margin-bottom: -50px;
+      }
+      .move-left {
+        margin-left: -50px;
+        margin-right: 50px;
+      }
+      .move-right {
+        margin-left: 50px;
+        margin-right: -50px;
       }
     </style>
   </head>
@@ -164,34 +168,34 @@
     <div class="wrapper">
       <main class="spin">
         <h1 class="spin spin-reverse">the<br />kodsnack<br />podcast<br />universe</h1>
-        <a href="https://kodsnack.se" class="spin spin-reverse kodsnack">
+        <a href="https://kodsnack.se" class="spin spin-reverse kodsnack move-down">
           <img src="./kodsnack.png" />
           <div class="glow"></div>
         </a>
-        <a href="https://asdf.pizza" class="spin spin-reverse asdf">
+        <a href="https://asdf.pizza" class="spin spin-reverse asdf move-left">
           <img src="./asdf.png" />
           <div class="glow"></div>
         </a>
-        <a href="https://kompilator.se" class="spin spin-reverse kompilator">
+        <a href="https://kompilator.se" class="spin spin-reverse kompilator move-up">
           <img src="./kompilator.webp" />
           <div class="glow"></div>
         </a>
-        <a href="https://swedoffi.se/" class="spin spin-reverse swedoffice">
+        <a href="https://swedoffi.se/" class="spin spin-reverse swedoffice anti-large move-up">
           <img src="./swedoffice.png" />
           <div class="glow"></div>
         </a>
-          <a href="https://bjoremanmelin.se/" class="spin spin-reverse bma">
-            <img src="./bma.svg" />
-            <div class="glow"></div>
-          </a>
-          <a href="https://synk.fm/" class="spin spin-reverse synk">
-            <img src="./synk.jpeg" />
-            <div class="glow"></div>
-          </a>
-          <a href="https://regprog.com/" class="spin spin-reverse regprog">
-            <img src="./regprog.jpg" />
-            <div class="glow"></div>
-          </a>
+        <a href="https://bjoremanmelin.se/" class="spin spin-reverse bma anti-large move-down">
+          <img src="./bma.svg" />
+          <div class="glow"></div>
+        </a>
+        <a href="https://synk.fm/" class="spin spin-reverse synk anti-large move-down">
+          <img src="./synk.jpeg" />
+          <div class="glow"></div>
+        </a>
+        <a href="https://regprog.com/" class="spin spin-reverse regprog anti-large move-up">
+          <img src="./regprog.jpg" />
+          <div class="glow"></div>
+        </a>
       </main>
       <img src="./gif/floppyani.gif" class="gif" style="top: 180px; right: 0" />
       <img src="./gif/3dmail.gif" class="gif" style="left: -480px; bottom: 10%" />
