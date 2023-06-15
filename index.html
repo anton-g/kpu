@@ -7,13 +7,16 @@
       :root {
         --glow: 60px;
         --move-size: 50px;
+        --grid-gap: 75px;
       }
       * {
         box-sizing: border-box;
       }
       @media (max-width: 500px) {
         :root {
-          --glow: 50px;
+          --glow: 20px;
+          --grid-gap: 25px;
+          --move-size: 30px;
         }
       }
       @font-face {
@@ -94,7 +97,7 @@
         max-width: 700px;
         aspect-ratio: 1 / 1;
         display: grid;
-        gap: 75px;
+        gap: var(--grid-gap);
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
       }
@@ -147,20 +150,20 @@
       }
 
       .move-up {
-        margin-top: -50px;
-        margin-bottom: 50px;
+        margin-top: calc(var(--move-size) * -1);
+        margin-bottom: var(--move-size);
       }
       .move-down {
-        margin-top: 50px;
-        margin-bottom: -50px;
+        margin-top: var(--move-size);
+        margin-bottom: calc(var(--move-size) * -1);
       }
       .move-left {
-        margin-left: -50px;
-        margin-right: 50px;
+        margin-left: calc(var(--move-size) * -1);
+        margin-right: var(--move-size);
       }
       .move-right {
-        margin-left: 50px;
-        margin-right: -50px;
+        margin-left: var(--move-size);
+        margin-right: calc(var(--move-size) * -1);
       }
     </style>
   </head>
