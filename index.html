@@ -83,7 +83,7 @@
       }
       .spin {
         animation-name: spin;
-        animation-duration: 50000ms;
+        animation-duration: 70000ms;
         animation-iteration-count: infinite;
         animation-timing-function: linear;
       }
@@ -101,76 +101,75 @@
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
       }
-      .kodsnack {
+      .left-top {
         grid-column-start: 1;
         grid-row-start: 1;
+        margin-top: var(--move-size);
+        margin-bottom: calc(var(--move-size) * -1);
       }
-      .asdf {
+      .left-center {
         grid-column-start: 1;
         grid-row-start: 2;
+        margin-left: calc(var(--move-size) * -1);
+        margin-right: var(--move-size);
       }
-      .kompilator {
+      .left-bottom {
         grid-column-start: 1;
         grid-row-start: 3;
+        margin-top: calc(var(--move-size) * -1);
+        margin-bottom: var(--move-size);
       }
-      .swedoffice {
+      .center-top {
         grid-column-start: 2;
         grid-row-start: 1;
+        margin-top: calc(var(--move-size) * -1);
+        margin-bottom: var(--move-size);
       }
-      .swedoffice img {
-        border-radius: 50%;
-      }
-      .synk {
+      .center-bottom {
         grid-column-start: 2;
         grid-row-start: 3;
+        margin-top: var(--move-size);
+        margin-bottom: calc(var(--move-size) * -1);
       }
-      .synk img {
-        border-radius: 30%;
-      }
-      .regprog {
+      .right-bottom {
         grid-column-start: 3;
         grid-row-start: 3;
+        margin-top: calc(var(--move-size) * -1);
+        margin-bottom: var(--move-size);
       }
-      .regprog img {
-        border-radius: 50%;
-      }
-      .developers {
+      .right-center {
         grid-column-start: 3;
         grid-row-start: 2;
+        margin-left: var(--move-size);
+        margin-right: calc(var(--move-size) * -1);
       }
-      .developers img {
-        border-radius: 25%;
+      .right-top {
+        grid-column-start: 3;
+        grid-row-start: 1;
+        margin-top: var(--move-size);
+        margin-bottom: calc(var(--move-size) * -1);
       }
+
       .anti-large {
         aspect-ratio: 1 / 1;
         max-height: 80%;
-      }
-      .bma {
-        grid-column-start: 3;
-        grid-row-start: 1;
-        margin-top: 50px;
-        margin-bottom: -50px;
       }
       .gif {
         position: absolute;
         z-index: -1;
       }
 
-      .move-up {
-        margin-top: calc(var(--move-size) * -1);
-        margin-bottom: var(--move-size);
+      .swedoffice img {
+        border-radius: 50%;
       }
-      .move-down {
-        margin-top: var(--move-size);
-        margin-bottom: calc(var(--move-size) * -1);
+      .synk img {
+        border-radius: 30%;
       }
-      .move-left {
-        margin-left: calc(var(--move-size) * -1);
-        margin-right: var(--move-size);
+      .regprog img {
+        border-radius: 50%;
       }
-      .move-right {
-        margin-left: var(--move-size);
-        margin-right: calc(var(--move-size) * -1);
+      .developers img {
+        border-radius: 25%;
       }
     </style>
   </head>
@@ -178,35 +177,35 @@
     <div class="wrapper">
       <main class="spin">
         <h1 class="spin spin-reverse">the<br />kodsnack<br />podcast<br />universe</h1>
-        <a href="https://kodsnack.se" class="spin spin-reverse kodsnack move-down">
+        <a href="https://kodsnack.se" class="spin spin-reverse center-top">
           <img src="./kodsnack.png" />
           <div class="glow"></div>
         </a>
-        <a href="https://asdf.pizza" class="spin spin-reverse asdf move-left">
+        <a href="https://asdf.pizza" class="spin spin-reverse left-center">
           <img src="./asdf.png" />
           <div class="glow"></div>
         </a>
-        <a href="https://kompilator.se" class="spin spin-reverse kompilator move-up">
+        <a href="https://kompilator.se" class="spin spin-reverse center-bottom">
           <img src="./kompilator.webp" />
           <div class="glow"></div>
         </a>
-        <a href="https://swedoffi.se/" class="spin spin-reverse swedoffice anti-large move-up">
+        <a href="https://swedoffi.se/" class="spin spin-reverse anti-large left-top swedoffice">
           <img src="./swedoffice.png" />
           <div class="glow"></div>
         </a>
-        <a href="https://bjoremanmelin.se/" class="spin spin-reverse bma anti-large move-down">
+        <a href="https://bjoremanmelin.se/" class="spin spin-reverse anti-large left-bottom">
           <img src="./bma.svg" />
           <div class="glow"></div>
         </a>
-        <a href="https://synk.fm/" class="spin spin-reverse synk anti-large move-down">
+        <a href="https://synk.fm/" class="spin spin-reverse anti-large right-top synk">
           <img src="./synk.jpeg" />
           <div class="glow"></div>
         </a>
-        <a href="https://regprog.com/" class="spin spin-reverse regprog anti-large move-up">
+        <a href="https://regprog.com/" class="spin spin-reverse anti-large right-center regprog">
           <img src="./regprog.jpg" />
           <div class="glow"></div>
         </a>
-        <a href="https://developerspodcast.com/" class="spin spin-reverse anti-large developers move-right">
+        <a href="https://developerspodcast.com/" class="spin spin-reverse anti-large right-bottom developers">
           <img src="./developers.webp" />
           <div class="glow"></div>
         </a>
