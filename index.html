@@ -72,7 +72,7 @@
         top: 50%;
         left: 50%;
         box-shadow: 0 0 50px 35px #fff, 0 0 300px var(--glow) #fff;
-        z-index: -1;
+        z-index: -2;
         opacity: 0.7;
         background-color: #fff;
         transition: box-shadow 0.2s ease-in-out;
@@ -100,6 +100,9 @@
         gap: var(--grid-gap);
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
+      }
+      main > * {
+        border: 1px dotted red;
       }
       .left-top {
         grid-column-start: 1;
@@ -156,7 +159,18 @@
       }
       .gif {
         position: absolute;
+        z-index: -2;
+      }
+      .inactive {
+        position: absolute;
+        opacity: 0.3;
         z-index: -1;
+        width: 40px;
+        transition: opacity 0.2s ease-in-out;
+        animation-duration: 5000ms;
+      }
+      .inactive:hover {
+        opacity: 0.7;
       }
 
       .swedoffice img {
@@ -169,6 +183,9 @@
         border-radius: 50%;
       }
       .developers img {
+        border-radius: 25%;
+      }
+      .modermodemet img {
         border-radius: 25%;
       }
     </style>
@@ -189,10 +206,6 @@
           <img src="./kompilator.webp" />
           <div class="glow"></div>
         </a>
-        <a href="https://swedoffi.se/" class="spin spin-reverse anti-large left-top swedoffice">
-          <img src="./swedoffice.png" />
-          <div class="glow"></div>
-        </a>
         <a href="https://bjoremanmelin.se/" class="spin spin-reverse anti-large left-bottom">
           <img src="./bma.svg" />
           <div class="glow"></div>
@@ -209,9 +222,12 @@
           <img src="./developers.webp" />
           <div class="glow"></div>
         </a>
-        <a href="https://modermodemet.se/" class="spin spin-reverse anti-large right-bottom developers">
+        <a href="https://modermodemet.se/" class="spin spin-reverse anti-large left-top modermodemet">
           <img src="./modermodemet.webp" />
           <div class="glow"></div>
+        </a>
+        <a href="https://swedoffi.se/" class="spin inactive swedoffice" style="top: 0px; right: 0px">
+          <img src="./swedoffice.png" />
         </a>
       </main>
       <img src="./gif/floppyani.gif" class="gif" style="top: 180px; right: 0" />
